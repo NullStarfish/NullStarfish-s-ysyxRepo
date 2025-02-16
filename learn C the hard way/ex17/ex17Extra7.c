@@ -23,6 +23,8 @@ struct Connection {
     struct Database *db;
 };
 
+struct Connection *conn;
+
 void die(const char *message)
 {
     if(errno) {
@@ -40,7 +42,7 @@ void Address_print(struct Address *addr)
             addr->id, addr->name, addr->email);
 }
 
-void Database_load(struct Connection *conn)
+void Database_load()
 {
     int rc = fread(conn->db, sizeof(struct Database), 1, conn->file);
     if(rc != 1) die("Failed to load database.");
@@ -69,7 +71,7 @@ struct Connection *Database_open(const char *filename, char mode)
     return conn;
 }
 
-void Database_close(struct Connection *conn)
+void Database_close()
 {
     if(conn) {
         if(conn->file) fclose(conn->file);
@@ -78,7 +80,7 @@ void Database_close(struct Connection *conn)
     }
 }
 
-void Database_write(struct Connection *conn)
+void Database_write()
 {
     rewind(conn->file);
 
@@ -89,7 +91,7 @@ void Database_write(struct Connection *conn)
     if(rc == -1) die("Cannot flush database.");
 }
 
-void Database_create(struct Connection *conn)
+void Database_create()
 {
     int i = 0;
 
@@ -101,7 +103,7 @@ void Database_create(struct Connection *conn)
     }
 }
 
-void Database_set(struct Connection *conn, int id, const char *name, const char *email)
+void Database_set(int id, const char *name, const char *email)
 {
     struct Address *addr = &conn->db->rows[id];
     if(addr->set) die("Already set, delete it first");
@@ -120,7 +122,7 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
     if(!res) die("Email copy failed");
 }
 
-void Database_get(struct Connection *conn, int id)
+void Database_get(int id)
 {
     struct Address *addr = &conn->db->rows[id];
 
@@ -131,13 +133,13 @@ void Database_get(struct Connection *conn, int id)
     }
 }
 
-void Database_delete(struct Connection *conn, int id)
+void Database_delete(int id)
 {
     struct Address addr = {.id = id, .set = 0};
     conn->db->rows[id] = addr;
 }
 
-void Database_list(struct Connection *conn)
+void Database_list()
 {
     int i = 0;
     struct Database *db = conn->db;
@@ -157,7 +159,7 @@ int main(int argc, char *argv[])
 
     char *filename = argv[1];
     char action = argv[2][0];
-    struct Connection *conn = Database_open(filename, action);
+    conn = Database_open(filename, action);
     int id = 0;
 
     if(argc > 3) id = atoi(argv[3]);
@@ -165,38 +167,40 @@ int main(int argc, char *argv[])
 
     switch(action) {
         case 'c':
-            Database_create(conn);
-            Database_write(conn);
+            Database_create();
+            Database_write();
             break;
 
         case 'g':
             if(argc != 4) die("Need an id to get");
 
-            Database_get(conn, id);
+            Database_get(id);
             break;
 
         case 's':
             if(argc != 6) die("Need id, name, email to set");
 
-            Database_set(conn, id, argv[4], argv[5]);
-            Database_write(conn);
+            Database_set(id, argv[4], argv[5]);
+            Database_write();
             break;
 
         case 'd':
             if(argc != 4) die("Need id to delete");
 
-            Database_delete(conn, id);
-            Database_write(conn);
+            Database_delete(id);
+            Database_write();
             break;
 
         case 'l':
-            Database_list(conn);
+            Database_list();
             break;
         default:
             die("Invalid action, only: c=create, g=get, s=set, d=del, l=list");
     }
 
-    Database_close(conn);
+    Database_close();
 
     return 0;
 }
+
+//很有oop的风格

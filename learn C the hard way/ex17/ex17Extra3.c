@@ -109,14 +109,12 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
     addr->set = 1;
     // WARNING: bug, read the "How To Break It" and fix this
     char *res = strncpy(addr->name, name, MAX_DATA);
-    if (strlen(name) >= MAX_DATA)
-        addr->name[MAX_DATA - 1] = '\0'; 
+    addr->name[MAX_DATA - 1] = '\0';
     // demonstrate the strncpy bug
     if(!res) die("Name copy failed");
 
     res = strncpy(addr->email, email, MAX_DATA);
-    if (strlen(email) >= MAX_DATA)
-        addr->email[MAX_DATA - 1] = '\0'; 
+    addr->email[MAX_DATA - 1] = '\0';
     if(!res) die("Email copy failed");
 }
 
@@ -150,7 +148,17 @@ void Database_list(struct Connection *conn)
         }
     }
 }
-
+int find(struct Connection *conn, char *name, char *retAddress) {
+    for (int i =0; i < MAX_ROWS; i ++) {
+        if (conn->db->rows[i].set == 1) {
+            if (strcmp(conn->db->rows[i].name, name) == 0) {
+                strcpy(retAddress, conn->db->rows[i].email);
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
 int main(int argc, char *argv[])
 {
     if(argc < 3) die("USAGE: ex17 <dbfile> <action> [action params]");
