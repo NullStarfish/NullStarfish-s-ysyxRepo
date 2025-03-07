@@ -4,7 +4,7 @@
 
 // 以下为伪代码
 VerilatedContext* contextp = NULL;
-static Vlight* top = new Vlight();
+static Vlight* top = NULL;
 
 void nvboard_bind_all_pins(Vlight* top);
 
