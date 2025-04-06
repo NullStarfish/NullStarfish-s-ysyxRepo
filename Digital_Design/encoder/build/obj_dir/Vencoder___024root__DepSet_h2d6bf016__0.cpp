@@ -82,7 +82,7 @@ void Vencoder___024root___eval(Vencoder___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vencoder___024root___dump_triggers__ico(vlSelf);
 #endif
-                VL_FATAL_MT("/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/encoder/vsrc/encoder.v", 1, "", "Input combinational region did not converge.");
+                VL_FATAL_MT("/home/nullstarfish/桌面/NullStarfish-s-ysyxRepo/Digital_Design/encoder/vsrc/encoder.v", 1, "", "Input combinational region did not converge.");
             }
             vlSelf->__VicoIterCount = ((IData)(1U) 
                                        + vlSelf->__VicoIterCount);
@@ -105,7 +105,7 @@ void Vencoder___024root___eval(Vencoder___024root* vlSelf) {
 #ifdef VL_DEBUG
                     Vencoder___024root___dump_triggers__act(vlSelf);
 #endif
-                    VL_FATAL_MT("/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/encoder/vsrc/encoder.v", 1, "", "Active region did not converge.");
+                    VL_FATAL_MT("/home/nullstarfish/桌面/NullStarfish-s-ysyxRepo/Digital_Design/encoder/vsrc/encoder.v", 1, "", "Active region did not converge.");
                 }
                 vlSelf->__VactIterCount = ((IData)(1U) 
                                            + vlSelf->__VactIterCount);
@@ -120,7 +120,7 @@ void Vencoder___024root___eval(Vencoder___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vencoder___024root___dump_triggers__nba(vlSelf);
 #endif
-                VL_FATAL_MT("/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/encoder/vsrc/encoder.v", 1, "", "NBA region did not converge.");
+                VL_FATAL_MT("/home/nullstarfish/桌面/NullStarfish-s-ysyxRepo/Digital_Design/encoder/vsrc/encoder.v", 1, "", "NBA region did not converge.");
             }
             __VnbaIterCount = ((IData)(1U) + __VnbaIterCount);
             Vencoder___024root___eval_nba(vlSelf);
