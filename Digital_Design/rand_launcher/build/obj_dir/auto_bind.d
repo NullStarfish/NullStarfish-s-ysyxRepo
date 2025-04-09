@@ -1,7 +1,7 @@
 auto_bind.o: \
- /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/timer/build/auto_bind.cpp \
+ /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/rand_launcher/build/auto_bind.cpp \
  /home/nullstarfish/Desktop/nvboard/usr/include/nvboard.h \
- /home/nullstarfish/Desktop/nvboard/usr/include/pins.h Vtimer_top.h \
+ /home/nullstarfish/Desktop/nvboard/usr/include/pins.h Vrand_launcher.h \
  /usr/local/share/verilator/include/verilated.h \
  /usr/local/share/verilator/include/verilatedos.h \
  /usr/local/share/verilator/include/verilated_config.h \

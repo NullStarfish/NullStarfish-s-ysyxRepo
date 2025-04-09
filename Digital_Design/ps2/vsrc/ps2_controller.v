@@ -1,0 +1,53 @@
+module ps2_keyboard(clk,resetn,ps2_clk,ps2_data, data, valid);
+    input clk,resetn,ps2_clk,ps2_data;
+    output reg [7:0] data;
+    output reg valid;
+    reg [9:0] buffer;
+    reg [3:0] count;
+    reg [2:0] ps2_clk_sync;
+    reg key_pressed;
+    reg break_code;  // 新增：标记是否收到断码
+
+    always @(posedge clk) begin
+        ps2_clk_sync <=  {ps2_clk_sync[1:0],ps2_clk};
+    end
+
+    wire sampling = ps2_clk_sync[2] & ~ps2_clk_sync[1];
+
+    always @(posedge clk) begin
+        if (resetn == 0) begin
+            count <= 0;
+            data <= 8'b0;
+            valid <= 0;
+            key_pressed <= 0;
+            break_code <= 0;
+        end
+        else begin
+            if (sampling) begin
+                if (count == 4'd10) begin
+                    if ((buffer[0] == 0) && (ps2_data) && (^buffer[9:1])) begin
+                        $display("receive %x", buffer[8:1]);
+                        if (buffer[8:1] == 8'hF0) begin
+                            break_code <= 1;  // 设置断码标记
+                        end
+                        else if (break_code) begin
+                            // 收到断码后的扫描码，清除所有标记
+                            break_code <= 0;
+                            key_pressed <= 0;
+                            valid <= 0;
+                        end
+                        else if (!key_pressed) begin
+                            data <= buffer[8:1];
+                            valid <= 1;
+                            key_pressed <= 1;
+                        end
+                    end
+                    count <= 0;
+                end else begin
+                    buffer[count] <= ps2_data;
+                    count <= count + 3'b1;
+                end
+            end 
+        end 
+    end
+endmodule

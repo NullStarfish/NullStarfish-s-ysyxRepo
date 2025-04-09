@@ -1,0 +1,5 @@
+top=rand_launcher
+rst (SW0)
+clk (SW1)
+o_seg1 (SEG1A, SEG1B, SEG1C, SEG1D, SEG1E, SEG1F, SEG1G, DEC1P)
+o_seg0 (SEG0A, SEG0B, SEG0C, SEG0D, SEG0E, SEG0F, SEG0G, DEC0P)

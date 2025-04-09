@@ -1,6 +1,6 @@
 start.o: \
- /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/timer/csrc/start.cpp \
- Vtimer_top.h /usr/local/share/verilator/include/verilated.h \
+ /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/rand_launcher/csrc/start.cpp \
+ Vrand_launcher.h /usr/local/share/verilator/include/verilated.h \
  /usr/local/share/verilator/include/verilatedos.h \
  /usr/local/share/verilator/include/verilated_config.h \
  /usr/local/share/verilator/include/verilated_types.h \

@@ -54,7 +54,7 @@ VL_ATTR_COLD void Vtimer_top___024root___eval_settle(Vtimer_top___024root* vlSel
 #ifdef VL_DEBUG
                 Vtimer_top___024root___dump_triggers__stl(vlSelf);
 #endif
-                VL_FATAL_MT("/home/nullstarfish/桌面/NullStarfish-s-ysyxRepo/Digital_Design/timer/vsrc/timer_top.v", 1, "", "Settle region did not converge.");
+                VL_FATAL_MT("/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/timer/vsrc/timer_top.v", 1, "", "Settle region did not converge.");
             }
             vlSelf->__VstlIterCount = ((IData)(1U) 
                                        + vlSelf->__VstlIterCount);

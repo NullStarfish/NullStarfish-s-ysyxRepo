@@ -1,7 +1,7 @@
 
 VERILATOR = verilator
 INC_PATH ?=  #防止和nvboard冲突
-TOP_NAME = timer_top
+TOP_NAME = rand_launcher
 NXDC_FILES = $(wildcard ./constr/*.nxdc)
 BUILD_DIR = $(abspath ./build)
 OBJ_DIR = $(BUILD_DIR)/obj_dir

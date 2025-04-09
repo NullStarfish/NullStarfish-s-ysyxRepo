@@ -2,9 +2,9 @@
 # DESCRIPTION: Verilator output: Makefile for building Verilated archive or executable
 #
 # Execute this makefile from the object directory:
-#    make -f Vtimer_top.mk
+#    make -f Vps2_top.mk
 
-default: /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/timer/build/timer_top
+default: /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/ps2/build/ps2_top
 
 ### Constants...
 # Perl executable (from $PERL)
@@ -30,9 +30,9 @@ VM_SC_TARGET_ARCH = linux
 
 ### Vars...
 # Design prefix (from --prefix)
-VM_PREFIX = Vtimer_top
+VM_PREFIX = Vps2_top
 # Module prefix (from --prefix)
-VM_MODPREFIX = Vtimer_top
+VM_MODPREFIX = Vps2_top
 # User CFLAGS (from -CFLAGS on Verilator command line)
 VM_USER_CFLAGS = \
 	-MMD \
@@ -40,7 +40,7 @@ VM_USER_CFLAGS = \
 	-I/usr/include/SDL2 \
 	-D_REENTRANT \
 	-I/home/nullstarfish/Desktop/nvboard/usr/include \
-	-DTOP_NAME="Vtimer_top" \
+	-DTOP_NAME="Vps2_top" \
 
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \
@@ -56,26 +56,26 @@ VM_USER_CLASSES = \
 
 # User .cpp directories (from .cpp's on Verilator command line)
 VM_USER_DIR = \
-	/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/timer/build \
-	/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/timer/csrc \
+	/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/ps2/build \
+	/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/ps2/csrc \
 
 
 ### Default rules...
 # Include list of all generated classes
-include Vtimer_top_classes.mk
+include Vps2_top_classes.mk
 # Include global rules
 include $(VERILATOR_ROOT)/include/verilated.mk
 
 ### Executable rules... (from --exe)
 VPATH += $(VM_USER_DIR)
 
-auto_bind.o: /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/timer/build/auto_bind.cpp
+auto_bind.o: /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/ps2/build/auto_bind.cpp
 	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-start.o: /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/timer/csrc/start.cpp
+start.o: /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/ps2/csrc/start.cpp
 	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
 
 ### Link rules... (from --exe)
-/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/timer/build/timer_top: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a $(VM_HIER_LIBS)
+/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/ps2/build/ps2_top: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a $(VM_HIER_LIBS)
 	$(LINK) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) $(LIBS) $(SC_LIBS) -o $@
 
 
