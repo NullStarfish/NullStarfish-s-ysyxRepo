@@ -131,5 +131,7 @@ VL_ATTR_COLD void Vps2_top___024root___ctor_var_reset(Vps2_top___024root* vlSelf
     vlSelf->ps2_data = 0;
     vlSelf->o_seg0 = 0;
     vlSelf->o_seg1 = 0;
+    vlSelf->o_seg2 = 0;
+    vlSelf->o_seg3 = 0;
     vlSelf->__Vtrigrprev__TOP__clk = 0;
 }

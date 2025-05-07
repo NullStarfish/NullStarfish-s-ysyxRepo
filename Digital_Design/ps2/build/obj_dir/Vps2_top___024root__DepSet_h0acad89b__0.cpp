@@ -31,11 +31,15 @@ VL_INLINE_OPT void Vps2_top___024root___ico_sequent__TOP__0(Vps2_top___024root* 
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vps2_top___024root___ico_sequent__TOP__0\n"); );
     // Body
     if (vlSymsp->TOP__ps2_top.valid) {
-        vlSelf->o_seg0 = (0xffU & (~ (IData)(vlSymsp->TOP__ps2_top.__PVT__uut2__DOT__seg0)));
-        vlSelf->o_seg1 = (0xffU & (~ (IData)(vlSymsp->TOP__ps2_top.__PVT__uut2__DOT__seg1)));
+        vlSelf->o_seg0 = (0xffU & (~ (IData)(vlSymsp->TOP__ps2_top.__PVT__seg_uut0__DOT__seg0)));
+        vlSelf->o_seg1 = (0xffU & (~ (IData)(vlSymsp->TOP__ps2_top.__PVT__seg_uut0__DOT__seg1)));
+        vlSelf->o_seg2 = (0xffU & (~ (IData)(vlSymsp->TOP__ps2_top.__PVT__seg_uut1__DOT__seg0)));
+        vlSelf->o_seg3 = (0xffU & (~ (IData)(vlSymsp->TOP__ps2_top.__PVT__seg_uut1__DOT__seg1)));
     } else {
         vlSelf->o_seg0 = 0xffU;
         vlSelf->o_seg1 = 0xffU;
+        vlSelf->o_seg2 = 0xffU;
+        vlSelf->o_seg3 = 0xffU;
     }
 }
 

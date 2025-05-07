@@ -1,30 +1,23 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Design internal header
-// See Vps2_top.h for the primary calling header
+// See Vfsm.h for the primary calling header
 
-#ifndef VERILATED_VPS2_TOP___024ROOT_H_
-#define VERILATED_VPS2_TOP___024ROOT_H_  // guard
+#ifndef VERILATED_VFSM___024ROOT_H_
+#define VERILATED_VFSM___024ROOT_H_  // guard
 
 #include "verilated.h"
 
-class Vps2_top__Syms;
-class Vps2_top_ps2_top;
+class Vfsm__Syms;
 
-
-class Vps2_top___024root final : public VerilatedModule {
+class Vfsm___024root final : public VerilatedModule {
   public:
-    // CELLS
-    Vps2_top_ps2_top* ps2_top;
 
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
-    VL_IN8(rst,0,0);
-    VL_IN8(ps2_clk,0,0);
-    VL_IN8(ps2_data,0,0);
-    VL_OUT8(o_seg0,7,0);
-    VL_OUT8(o_seg1,7,0);
-    VL_OUT8(o_seg2,7,0);
-    VL_OUT8(o_seg3,7,0);
+    VL_IN8(M,0,0);
+    VL_OUT8(state,2,0);
+    CData/*2:0*/ fsm__DOT__cur_state;
+    CData/*2:0*/ fsm__DOT__next_state;
     CData/*0:0*/ __Vtrigrprev__TOP__clk;
     CData/*0:0*/ __VactContinue;
     IData/*31:0*/ __VstlIterCount;
@@ -36,12 +29,12 @@ class Vps2_top___024root final : public VerilatedModule {
     VlTriggerVec<1> __VnbaTriggered;
 
     // INTERNAL VARIABLES
-    Vps2_top__Syms* const vlSymsp;
+    Vfsm__Syms* const vlSymsp;
 
     // CONSTRUCTORS
-    Vps2_top___024root(Vps2_top__Syms* symsp, const char* v__name);
-    ~Vps2_top___024root();
-    VL_UNCOPYABLE(Vps2_top___024root);
+    Vfsm___024root(Vfsm__Syms* symsp, const char* v__name);
+    ~Vfsm___024root();
+    VL_UNCOPYABLE(Vfsm___024root);
 
     // INTERNAL METHODS
     void __Vconfigure(bool first);

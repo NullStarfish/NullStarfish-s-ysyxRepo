@@ -19,6 +19,8 @@ class Vps2_top_ps2_top final : public VerilatedModule {
     VL_IN8(ps2_data,0,0);
     VL_OUT8(o_seg0,7,0);
     VL_OUT8(o_seg1,7,0);
+    VL_OUT8(o_seg2,7,0);
+    VL_OUT8(o_seg3,7,0);
     CData/*7:0*/ data;
     CData/*0:0*/ valid;
     CData/*3:0*/ __PVT__uut1__DOT__count;
@@ -26,8 +28,10 @@ class Vps2_top_ps2_top final : public VerilatedModule {
     CData/*0:0*/ __PVT__uut1__DOT__key_pressed;
     CData/*0:0*/ __PVT__uut1__DOT__break_code;
     CData/*0:0*/ uut1__DOT____Vlvbound_h1a91ade8__0;
-    CData/*7:0*/ __PVT__uut2__DOT__seg0;
-    CData/*7:0*/ __PVT__uut2__DOT__seg1;
+    CData/*7:0*/ __PVT__seg_uut0__DOT__seg0;
+    CData/*7:0*/ __PVT__seg_uut0__DOT__seg1;
+    CData/*7:0*/ __PVT__seg_uut1__DOT__seg0;
+    CData/*7:0*/ __PVT__seg_uut1__DOT__seg1;
     SData/*9:0*/ __PVT__uut1__DOT__buffer;
 
     // INTERNAL VARIABLES

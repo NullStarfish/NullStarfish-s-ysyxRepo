@@ -17,6 +17,8 @@ Vps2_top::Vps2_top(VerilatedContext* _vcontextp__, const char* _vcname__)
     , ps2_data{vlSymsp->TOP.ps2_data}
     , o_seg0{vlSymsp->TOP.o_seg0}
     , o_seg1{vlSymsp->TOP.o_seg1}
+    , o_seg2{vlSymsp->TOP.o_seg2}
+    , o_seg3{vlSymsp->TOP.o_seg3}
     , ps2_top{vlSymsp->TOP.ps2_top}
     , rootp{&(vlSymsp->TOP)}
 {

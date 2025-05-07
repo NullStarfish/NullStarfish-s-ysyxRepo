@@ -18,6 +18,8 @@ VL_ATTR_COLD void Vps2_top_ps2_top___ctor_var_reset(Vps2_top_ps2_top* vlSelf) {
     vlSelf->ps2_data = 0;
     vlSelf->o_seg0 = 0;
     vlSelf->o_seg1 = 0;
+    vlSelf->o_seg2 = 0;
+    vlSelf->o_seg3 = 0;
     vlSelf->data = 0;
     vlSelf->valid = 0;
     vlSelf->__PVT__uut1__DOT__buffer = 0;
@@ -26,6 +28,8 @@ VL_ATTR_COLD void Vps2_top_ps2_top___ctor_var_reset(Vps2_top_ps2_top* vlSelf) {
     vlSelf->__PVT__uut1__DOT__key_pressed = 0;
     vlSelf->__PVT__uut1__DOT__break_code = 0;
     vlSelf->uut1__DOT____Vlvbound_h1a91ade8__0 = 0;
-    vlSelf->__PVT__uut2__DOT__seg0 = 0;
-    vlSelf->__PVT__uut2__DOT__seg1 = 0;
+    vlSelf->__PVT__seg_uut0__DOT__seg0 = 0;
+    vlSelf->__PVT__seg_uut0__DOT__seg1 = 0;
+    vlSelf->__PVT__seg_uut1__DOT__seg0 = 0;
+    vlSelf->__PVT__seg_uut1__DOT__seg1 = 0;
 }
