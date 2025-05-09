@@ -1,0 +1,1 @@
+grep -E 'a.*a.*a' /usr/share/dict/words | grep -Ev "'s$" | wc -l
