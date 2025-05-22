@@ -25,9 +25,11 @@ void Vencoder___024root__trace_chg_sub_0(Vencoder___024root* vlSelf, VerilatedVc
     // Body
     bufp->chgBit(oldp+0,(vlSelf->s));
     bufp->chgCData(oldp+1,(vlSelf->x),8);
-    bufp->chgBit(oldp+2,(vlSelf->ys));
-    bufp->chgBit(oldp+3,(vlSelf->yex));
-    bufp->chgCData(oldp+4,(vlSelf->y),3);
+    bufp->chgBit(oldp+2,(vlSelf->yex));
+    bufp->chgCData(oldp+3,(vlSelf->y),3);
+    bufp->chgCData(oldp+4,(vlSelf->o_seg0),8);
+    bufp->chgCData(oldp+5,(vlSelf->encoder__DOT__seg0),8);
+    bufp->chgCData(oldp+6,(vlSelf->y),4);
 }
 
 void Vencoder___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {

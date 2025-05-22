@@ -37,6 +37,7 @@ int main() {
     sim_init();
     nvboard_bind_all_pins(top);
     nvboard_init();
+    /*
     printf("Starting test\n");
     //Test with enable = 0 (disabled)
     top->s = 0;
@@ -70,6 +71,7 @@ int main() {
     top->x = 0b00000000;
     top->eval();
     printf("Test done\n");
+    */
     while(!Verilated::gotFinish()) {
         top->eval();
         nvboard_update();

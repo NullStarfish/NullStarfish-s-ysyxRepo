@@ -18,6 +18,7 @@ VL_ATTR_COLD void Vrand_launcher___024root___eval_initial(Vrand_launcher___024ro
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vrand_launcher___024root___eval_initial\n"); );
     // Body
     vlSelf->__Vtrigrprev__TOP__clk = vlSelf->clk;
+    vlSelf->__Vtrigrprev__TOP__rst = vlSelf->rst;
 }
 
 VL_ATTR_COLD void Vrand_launcher___024root___eval_final(Vrand_launcher___024root* vlSelf) {
@@ -121,7 +122,10 @@ VL_ATTR_COLD void Vrand_launcher___024root___dump_triggers__act(Vrand_launcher__
         VL_DBG_MSGF("         No triggers active\n");
     }
     if (vlSelf->__VactTriggered.at(0U)) {
-        VL_DBG_MSGF("         'act' region trigger index 0 is active: @(posedge clk)\n");
+        VL_DBG_MSGF("         'act' region trigger index 0 is active: @(posedge clk or posedge rst)\n");
+    }
+    if (vlSelf->__VactTriggered.at(1U)) {
+        VL_DBG_MSGF("         'act' region trigger index 1 is active: @(posedge clk)\n");
     }
 }
 #endif  // VL_DEBUG
@@ -136,7 +140,10 @@ VL_ATTR_COLD void Vrand_launcher___024root___dump_triggers__nba(Vrand_launcher__
         VL_DBG_MSGF("         No triggers active\n");
     }
     if (vlSelf->__VnbaTriggered.at(0U)) {
-        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @(posedge clk)\n");
+        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @(posedge clk or posedge rst)\n");
+    }
+    if (vlSelf->__VnbaTriggered.at(1U)) {
+        VL_DBG_MSGF("         'nba' region trigger index 1 is active: @(posedge clk)\n");
     }
 }
 #endif  // VL_DEBUG
@@ -153,5 +160,7 @@ VL_ATTR_COLD void Vrand_launcher___024root___ctor_var_reset(Vrand_launcher___024
     vlSelf->__pinNumber5 = 0;
     vlSelf->rand_launcher__DOT__In = 0;
     vlSelf->rand_launcher__DOT__num = 0;
+    vlSelf->__Vdly__rand_launcher__DOT__num = 0;
     vlSelf->__Vtrigrprev__TOP__clk = 0;
+    vlSelf->__Vtrigrprev__TOP__rst = 0;
 }

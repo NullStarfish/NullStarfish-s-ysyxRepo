@@ -13,9 +13,9 @@ Vencoder::Vencoder(VerilatedContext* _vcontextp__, const char* _vcname__)
     , vlSymsp{new Vencoder__Syms(contextp(), _vcname__, this)}
     , s{vlSymsp->TOP.s}
     , x{vlSymsp->TOP.x}
-    , ys{vlSymsp->TOP.ys}
     , yex{vlSymsp->TOP.yex}
     , y{vlSymsp->TOP.y}
+    , o_seg0{vlSymsp->TOP.o_seg0}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context

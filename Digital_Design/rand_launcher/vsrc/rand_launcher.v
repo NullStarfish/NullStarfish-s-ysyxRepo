@@ -7,7 +7,7 @@ module rand_launcher (
     reg In;
     wire [7:0] num;
 
-    always@(posedge clk) begin
+    always@(posedge clk or posedge rst) begin
         if (rst) begin
             In <= 0;
         end else begin

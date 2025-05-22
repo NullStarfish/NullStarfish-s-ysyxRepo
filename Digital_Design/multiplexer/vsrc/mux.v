@@ -6,13 +6,15 @@ module mux(
     input [1:0] s,
     output reg [1:0] y
     );
-    always@(*) begin
-        case(s)
-            2'b00: y = x0;
-            2'b01: y = x1;
-            2'b10: y = x2;
-            2'b11: y = x3;
-            default: y = 2'b00;
-        endcase
-    end
+    MuxKeyWithDefault #(4, 2, 2) i0 (
+        .out(y),
+        .key(s),
+        .default_out(2'b00),
+        .lut({
+            2'b00, x0,
+            2'b01, x1,
+            2'b10, x2,
+            2'b11, x3
+        })
+    );
 endmodule

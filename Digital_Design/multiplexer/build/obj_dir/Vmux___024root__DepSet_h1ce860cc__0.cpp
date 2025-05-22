@@ -10,12 +10,69 @@ VL_INLINE_OPT void Vmux___024root___ico_sequent__TOP__0(Vmux___024root* vlSelf) 
     if (false && vlSelf) {}  // Prevent unused
     Vmux__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vmux___024root___ico_sequent__TOP__0\n"); );
+    // Init
+    CData/*1:0*/ mux__DOT__i0__DOT__i0__DOT__lut_out;
+    mux__DOT__i0__DOT__i0__DOT__lut_out = 0;
+    CData/*0:0*/ mux__DOT__i0__DOT__i0__DOT__hit;
+    mux__DOT__i0__DOT__i0__DOT__hit = 0;
     // Body
-    vlSelf->y = ((2U & (IData)(vlSelf->s)) ? ((1U & (IData)(vlSelf->s))
-                                               ? (IData)(vlSelf->x3)
-                                               : (IData)(vlSelf->x2))
-                  : ((1U & (IData)(vlSelf->s)) ? (IData)(vlSelf->x1)
-                      : (IData)(vlSelf->x0)));
+    vlSelf->mux__DOT__i0__DOT__i0__DOT__data_list[0U] 
+        = vlSelf->x3;
+    vlSelf->mux__DOT__i0__DOT__i0__DOT__data_list[1U] 
+        = vlSelf->x2;
+    vlSelf->mux__DOT__i0__DOT__i0__DOT__data_list[2U] 
+        = vlSelf->x1;
+    vlSelf->mux__DOT__i0__DOT__i0__DOT__data_list[3U] 
+        = vlSelf->x0;
+    mux__DOT__i0__DOT__i0__DOT__lut_out = ((- (IData)(
+                                                      ((IData)(vlSelf->s) 
+                                                       == 
+                                                       vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list
+                                                       [0U]))) 
+                                           & vlSelf->mux__DOT__i0__DOT__i0__DOT__data_list
+                                           [0U]);
+    mux__DOT__i0__DOT__i0__DOT__hit = ((IData)(vlSelf->s) 
+                                       == vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list
+                                       [0U]);
+    mux__DOT__i0__DOT__i0__DOT__lut_out = ((IData)(mux__DOT__i0__DOT__i0__DOT__lut_out) 
+                                           | ((- (IData)(
+                                                         ((IData)(vlSelf->s) 
+                                                          == 
+                                                          vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list
+                                                          [1U]))) 
+                                              & vlSelf->mux__DOT__i0__DOT__i0__DOT__data_list
+                                              [1U]));
+    mux__DOT__i0__DOT__i0__DOT__hit = ((IData)(mux__DOT__i0__DOT__i0__DOT__hit) 
+                                       | ((IData)(vlSelf->s) 
+                                          == vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list
+                                          [1U]));
+    mux__DOT__i0__DOT__i0__DOT__lut_out = ((IData)(mux__DOT__i0__DOT__i0__DOT__lut_out) 
+                                           | ((- (IData)(
+                                                         ((IData)(vlSelf->s) 
+                                                          == 
+                                                          vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list
+                                                          [2U]))) 
+                                              & vlSelf->mux__DOT__i0__DOT__i0__DOT__data_list
+                                              [2U]));
+    mux__DOT__i0__DOT__i0__DOT__hit = ((IData)(mux__DOT__i0__DOT__i0__DOT__hit) 
+                                       | ((IData)(vlSelf->s) 
+                                          == vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list
+                                          [2U]));
+    mux__DOT__i0__DOT__i0__DOT__lut_out = ((IData)(mux__DOT__i0__DOT__i0__DOT__lut_out) 
+                                           | ((- (IData)(
+                                                         ((IData)(vlSelf->s) 
+                                                          == 
+                                                          vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list
+                                                          [3U]))) 
+                                              & vlSelf->mux__DOT__i0__DOT__i0__DOT__data_list
+                                              [3U]));
+    mux__DOT__i0__DOT__i0__DOT__hit = ((IData)(mux__DOT__i0__DOT__i0__DOT__hit) 
+                                       | ((IData)(vlSelf->s) 
+                                          == vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list
+                                          [3U]));
+    vlSelf->y = ((IData)(mux__DOT__i0__DOT__i0__DOT__hit)
+                  ? (IData)(mux__DOT__i0__DOT__i0__DOT__lut_out)
+                  : 0U);
 }
 
 void Vmux___024root___eval_ico(Vmux___024root* vlSelf) {

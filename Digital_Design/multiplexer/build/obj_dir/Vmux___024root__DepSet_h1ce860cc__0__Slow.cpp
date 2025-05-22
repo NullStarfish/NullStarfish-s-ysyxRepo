@@ -12,10 +12,25 @@ VL_ATTR_COLD void Vmux___024root___eval_static(Vmux___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vmux___024root___eval_static\n"); );
 }
 
+VL_ATTR_COLD void Vmux___024root___eval_initial__TOP(Vmux___024root* vlSelf);
+
 VL_ATTR_COLD void Vmux___024root___eval_initial(Vmux___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vmux__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vmux___024root___eval_initial\n"); );
+    // Body
+    Vmux___024root___eval_initial__TOP(vlSelf);
+}
+
+VL_ATTR_COLD void Vmux___024root___eval_initial__TOP(Vmux___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vmux__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vmux___024root___eval_initial__TOP\n"); );
+    // Body
+    vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list[0U] = 3U;
+    vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list[1U] = 2U;
+    vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list[2U] = 1U;
+    vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list[3U] = 0U;
 }
 
 VL_ATTR_COLD void Vmux___024root___eval_final(Vmux___024root* vlSelf) {
@@ -134,4 +149,10 @@ VL_ATTR_COLD void Vmux___024root___ctor_var_reset(Vmux___024root* vlSelf) {
     vlSelf->x3 = 0;
     vlSelf->s = 0;
     vlSelf->y = 0;
+    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
+        vlSelf->mux__DOT__i0__DOT__i0__DOT__key_list[__Vi0] = 0;
+    }
+    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
+        vlSelf->mux__DOT__i0__DOT__i0__DOT__data_list[__Vi0] = 0;
+    }
 }

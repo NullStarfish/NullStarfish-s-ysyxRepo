@@ -2,7 +2,7 @@ module seg_driver (
     input [7:0] num,
     input en,
     output [7:0] o_seg0,
-    output [7:0] o_seg1,
+    output [7:0] o_seg1
 );
     wire [7:0] seg0;
     wire [7:0] seg1;

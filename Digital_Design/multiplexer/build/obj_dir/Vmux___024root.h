@@ -23,6 +23,8 @@ class Vmux___024root final : public VerilatedModule {
     IData/*31:0*/ __VstlIterCount;
     IData/*31:0*/ __VicoIterCount;
     IData/*31:0*/ __VactIterCount;
+    VlUnpacked<CData/*1:0*/, 4> mux__DOT__i0__DOT__i0__DOT__key_list;
+    VlUnpacked<CData/*1:0*/, 4> mux__DOT__i0__DOT__i0__DOT__data_list;
     VlTriggerVec<1> __VstlTriggered;
     VlTriggerVec<1> __VicoTriggered;
     VlTriggerVec<0> __VactTriggered;

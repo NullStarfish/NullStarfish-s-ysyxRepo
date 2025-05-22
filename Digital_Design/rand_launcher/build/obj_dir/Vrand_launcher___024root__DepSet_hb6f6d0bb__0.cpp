@@ -12,12 +12,42 @@ void Vrand_launcher___024root___eval_act(Vrand_launcher___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vrand_launcher___024root___eval_act\n"); );
 }
 
-extern const VlUnpacked<CData/*7:0*/, 16> Vrand_launcher__ConstPool__TABLE_h33195002_0;
-
 VL_INLINE_OPT void Vrand_launcher___024root___nba_sequent__TOP__0(Vrand_launcher___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vrand_launcher__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vrand_launcher___024root___nba_sequent__TOP__0\n"); );
+    // Body
+    vlSelf->__Vdly__rand_launcher__DOT__num = vlSelf->rand_launcher__DOT__num;
+    vlSelf->__Vdly__rand_launcher__DOT__num = ((IData)(vlSelf->rst)
+                                                ? 0U
+                                                : (
+                                                   ((IData)(vlSelf->rand_launcher__DOT__In) 
+                                                    << 7U) 
+                                                   | (0x7fU 
+                                                      & ((IData)(vlSelf->rand_launcher__DOT__num) 
+                                                         >> 1U))));
+}
+
+VL_INLINE_OPT void Vrand_launcher___024root___nba_sequent__TOP__1(Vrand_launcher___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vrand_launcher__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vrand_launcher___024root___nba_sequent__TOP__1\n"); );
+    // Body
+    vlSelf->rand_launcher__DOT__In = (1U & ((~ (IData)(vlSelf->rst)) 
+                                            & ((0U 
+                                                == (IData)(vlSelf->rand_launcher__DOT__num)) 
+                                               | (1U 
+                                                  & VL_REDXOR_8(
+                                                                (0x1dU 
+                                                                 & (IData)(vlSelf->rand_launcher__DOT__num)))))));
+}
+
+extern const VlUnpacked<CData/*7:0*/, 16> Vrand_launcher__ConstPool__TABLE_h33195002_0;
+
+VL_INLINE_OPT void Vrand_launcher___024root___nba_sequent__TOP__2(Vrand_launcher___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vrand_launcher__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vrand_launcher___024root___nba_sequent__TOP__2\n"); );
     // Init
     CData/*7:0*/ rand_launcher__DOT__seg_driver__DOT__seg0;
     rand_launcher__DOT__seg_driver__DOT__seg0 = 0;
@@ -27,24 +57,8 @@ VL_INLINE_OPT void Vrand_launcher___024root___nba_sequent__TOP__0(Vrand_launcher
     __Vtableidx1 = 0;
     CData/*3:0*/ __Vtableidx2;
     __Vtableidx2 = 0;
-    CData/*7:0*/ __Vdly__rand_launcher__DOT__num;
-    __Vdly__rand_launcher__DOT__num = 0;
     // Body
-    __Vdly__rand_launcher__DOT__num = vlSelf->rand_launcher__DOT__num;
-    __Vdly__rand_launcher__DOT__num = ((IData)(vlSelf->rst)
-                                        ? 0U : (((IData)(vlSelf->rand_launcher__DOT__In) 
-                                                 << 7U) 
-                                                | (0x7fU 
-                                                   & ((IData)(vlSelf->rand_launcher__DOT__num) 
-                                                      >> 1U))));
-    vlSelf->rand_launcher__DOT__In = (1U & ((~ (IData)(vlSelf->rst)) 
-                                            & ((0U 
-                                                == (IData)(vlSelf->rand_launcher__DOT__num)) 
-                                               | (1U 
-                                                  & VL_REDXOR_8(
-                                                                (0x1dU 
-                                                                 & (IData)(vlSelf->rand_launcher__DOT__num)))))));
-    vlSelf->rand_launcher__DOT__num = __Vdly__rand_launcher__DOT__num;
+    vlSelf->rand_launcher__DOT__num = vlSelf->__Vdly__rand_launcher__DOT__num;
     __Vtableidx1 = (0xfU & (IData)(vlSelf->rand_launcher__DOT__num));
     rand_launcher__DOT__seg_driver__DOT__seg0 = Vrand_launcher__ConstPool__TABLE_h33195002_0
         [__Vtableidx1];
@@ -61,8 +75,14 @@ void Vrand_launcher___024root___eval_nba(Vrand_launcher___024root* vlSelf) {
     Vrand_launcher__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vrand_launcher___024root___eval_nba\n"); );
     // Body
-    if (vlSelf->__VnbaTriggered.at(0U)) {
+    if (vlSelf->__VnbaTriggered.at(1U)) {
         Vrand_launcher___024root___nba_sequent__TOP__0(vlSelf);
+    }
+    if (vlSelf->__VnbaTriggered.at(0U)) {
+        Vrand_launcher___024root___nba_sequent__TOP__1(vlSelf);
+    }
+    if (vlSelf->__VnbaTriggered.at(1U)) {
+        Vrand_launcher___024root___nba_sequent__TOP__2(vlSelf);
     }
 }
 
@@ -79,7 +99,7 @@ void Vrand_launcher___024root___eval(Vrand_launcher___024root* vlSelf) {
     Vrand_launcher__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vrand_launcher___024root___eval\n"); );
     // Init
-    VlTriggerVec<1> __VpreTriggered;
+    VlTriggerVec<2> __VpreTriggered;
     IData/*31:0*/ __VnbaIterCount;
     CData/*0:0*/ __VnbaContinue;
     // Body

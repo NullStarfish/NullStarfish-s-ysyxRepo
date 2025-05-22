@@ -13,16 +13,20 @@ VL_ATTR_COLD void Vencoder___024root__trace_init_sub__TOP__0(Vencoder___024root*
     // Body
     tracep->declBit(c+1,"s", false,-1);
     tracep->declBus(c+2,"x", false,-1, 7,0);
-    tracep->declBit(c+3,"ys", false,-1);
-    tracep->declBit(c+4,"yex", false,-1);
-    tracep->declBus(c+5,"y", false,-1, 2,0);
+    tracep->declBit(c+3,"yex", false,-1);
+    tracep->declBus(c+4,"y", false,-1, 2,0);
+    tracep->declBus(c+5,"o_seg0", false,-1, 7,0);
     tracep->pushNamePrefix("encoder ");
     tracep->declBit(c+1,"s", false,-1);
     tracep->declBus(c+2,"x", false,-1, 7,0);
-    tracep->declBit(c+3,"ys", false,-1);
-    tracep->declBit(c+4,"yex", false,-1);
-    tracep->declBus(c+5,"y", false,-1, 2,0);
-    tracep->popNamePrefix(1);
+    tracep->declBit(c+3,"yex", false,-1);
+    tracep->declBus(c+4,"y", false,-1, 2,0);
+    tracep->declBus(c+5,"o_seg0", false,-1, 7,0);
+    tracep->declBus(c+6,"seg0", false,-1, 7,0);
+    tracep->pushNamePrefix("seg_decoder0 ");
+    tracep->declBus(c+7,"num", false,-1, 3,0);
+    tracep->declBus(c+6,"seg", false,-1, 7,0);
+    tracep->popNamePrefix(2);
 }
 
 VL_ATTR_COLD void Vencoder___024root__trace_init_top(Vencoder___024root* vlSelf, VerilatedVcd* tracep) {
@@ -67,7 +71,9 @@ VL_ATTR_COLD void Vencoder___024root__trace_full_sub_0(Vencoder___024root* vlSel
     // Body
     bufp->fullBit(oldp+1,(vlSelf->s));
     bufp->fullCData(oldp+2,(vlSelf->x),8);
-    bufp->fullBit(oldp+3,(vlSelf->ys));
-    bufp->fullBit(oldp+4,(vlSelf->yex));
-    bufp->fullCData(oldp+5,(vlSelf->y),3);
+    bufp->fullBit(oldp+3,(vlSelf->yex));
+    bufp->fullCData(oldp+4,(vlSelf->y),3);
+    bufp->fullCData(oldp+5,(vlSelf->o_seg0),8);
+    bufp->fullCData(oldp+6,(vlSelf->encoder__DOT__seg0),8);
+    bufp->fullCData(oldp+7,(vlSelf->y),4);
 }

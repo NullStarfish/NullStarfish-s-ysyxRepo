@@ -39,12 +39,12 @@ VM_USER_CFLAGS = \
 	-O3 \
 	-I/usr/include/SDL2 \
 	-D_REENTRANT \
-	-I/home/nullstarfish/Desktop/ysyx-workbench/nvboard/usr/include \
+	-I/home/nullstarfish/Desktop/nvboard/usr/include \
 	-DTOP_NAME="Vmux" \
 
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \
-	/home/nullstarfish/Desktop/ysyx-workbench/nvboard/build/nvboard.a \
+	/home/nullstarfish/Desktop/nvboard/build/nvboard.a \
 	-lSDL2 \
 	-lSDL2_image \
 	-lSDL2_ttf \

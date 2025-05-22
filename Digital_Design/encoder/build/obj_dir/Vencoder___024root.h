@@ -15,9 +15,10 @@ class Vencoder___024root final : public VerilatedModule {
     // DESIGN SPECIFIC STATE
     VL_IN8(s,0,0);
     VL_IN8(x,7,0);
-    VL_OUT8(ys,0,0);
     VL_OUT8(yex,0,0);
     VL_OUT8(y,2,0);
+    VL_OUT8(o_seg0,7,0);
+    CData/*7:0*/ encoder__DOT__seg0;
     CData/*0:0*/ __VactContinue;
     IData/*31:0*/ __VstlIterCount;
     IData/*31:0*/ __VicoIterCount;

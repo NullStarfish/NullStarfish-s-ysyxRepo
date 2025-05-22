@@ -1,10 +1,10 @@
 #include <Vmux.h>
 #include "verilated.h"
 #include "minunit.h"
-
+#include <nvboard.h>
 VerilatedContext* contextp = NULL;
 static Vmux* top = NULL;
-
+void nvboard_bind_all_pins(Vmux* top);
 
 void sim_init() {
     contextp = new VerilatedContext;
@@ -53,6 +53,13 @@ char* testmux() {
 
 
 int main() {
-    testmux();
+    Vmux* top = new Vmux;
+    nvboard_bind_all_pins(top);
+    nvboard_init();
+    //testmux();
+    while (!Verilated::gotFinish()) {
+        top->eval();
+        nvboard_update();
+    }
     return 0;
 }

@@ -48,7 +48,7 @@ VL_ATTR_COLD void Vencoder___024root___eval_settle(Vencoder___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vencoder___024root___dump_triggers__stl(vlSelf);
 #endif
-                VL_FATAL_MT("/home/nullstarfish/桌面/NullStarfish-s-ysyxRepo/Digital_Design/encoder/vsrc/encoder.v", 1, "", "Settle region did not converge.");
+                VL_FATAL_MT("/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/encoder/vsrc/encoder.v", 1, "", "Settle region did not converge.");
             }
             vlSelf->__VstlIterCount = ((IData)(1U) 
                                        + vlSelf->__VstlIterCount);
@@ -130,7 +130,8 @@ VL_ATTR_COLD void Vencoder___024root___ctor_var_reset(Vencoder___024root* vlSelf
     // Body
     vlSelf->s = 0;
     vlSelf->x = 0;
-    vlSelf->ys = 0;
     vlSelf->yex = 0;
     vlSelf->y = 0;
+    vlSelf->o_seg0 = 0;
+    vlSelf->encoder__DOT__seg0 = 0;
 }

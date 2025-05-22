@@ -20,13 +20,15 @@ class Vrand_launcher___024root final : public VerilatedModule {
     VL_IN8(__pinNumber5,0,0);
     CData/*0:0*/ rand_launcher__DOT__In;
     CData/*7:0*/ rand_launcher__DOT__num;
+    CData/*7:0*/ __Vdly__rand_launcher__DOT__num;
     CData/*0:0*/ __Vtrigrprev__TOP__clk;
+    CData/*0:0*/ __Vtrigrprev__TOP__rst;
     CData/*0:0*/ __VactContinue;
     IData/*31:0*/ __VstlIterCount;
     IData/*31:0*/ __VactIterCount;
     VlTriggerVec<1> __VstlTriggered;
-    VlTriggerVec<1> __VactTriggered;
-    VlTriggerVec<1> __VnbaTriggered;
+    VlTriggerVec<2> __VactTriggered;
+    VlTriggerVec<2> __VnbaTriggered;
 
     // INTERNAL VARIABLES
     Vrand_launcher__Syms* const vlSymsp;

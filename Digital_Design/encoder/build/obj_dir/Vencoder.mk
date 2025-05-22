@@ -4,7 +4,7 @@
 # Execute this makefile from the object directory:
 #    make -f Vencoder.mk
 
-default: /home/nullstarfish/桌面/NullStarfish-s-ysyxRepo/Digital_Design/encoder/build/encoder
+default: /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/encoder/build/encoder
 
 ### Constants...
 # Perl executable (from $PERL)
@@ -39,13 +39,13 @@ VM_USER_CFLAGS = \
 	-O3 \
 	-I/usr/include/SDL2 \
 	-D_REENTRANT \
-	-I/home/nullstarfish/桌面/nvboard/usr/include \
+	-I/home/nullstarfish/Desktop/nvboard/usr/include \
 	-DTOP_NAME="Vencoder" \
 	-g \
 
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \
-	/home/nullstarfish/桌面/nvboard/build/nvboard.a \
+	/home/nullstarfish/Desktop/nvboard/build/nvboard.a \
 	-lSDL2 \
 	-lSDL2_image \
 	-lSDL2_ttf \
@@ -57,8 +57,8 @@ VM_USER_CLASSES = \
 
 # User .cpp directories (from .cpp's on Verilator command line)
 VM_USER_DIR = \
-	/home/nullstarfish/桌面/NullStarfish-s-ysyxRepo/Digital_Design/encoder/build \
-	/home/nullstarfish/桌面/NullStarfish-s-ysyxRepo/Digital_Design/encoder/csrc \
+	/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/encoder/build \
+	/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/encoder/csrc \
 
 
 ### Default rules...
@@ -70,13 +70,13 @@ include $(VERILATOR_ROOT)/include/verilated.mk
 ### Executable rules... (from --exe)
 VPATH += $(VM_USER_DIR)
 
-auto_bind.o: /home/nullstarfish/桌面/NullStarfish-s-ysyxRepo/Digital_Design/encoder/build/auto_bind.cpp
+auto_bind.o: /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/encoder/build/auto_bind.cpp
 	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
-testencoder.o: /home/nullstarfish/桌面/NullStarfish-s-ysyxRepo/Digital_Design/encoder/csrc/testencoder.cpp
+testencoder.o: /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/encoder/csrc/testencoder.cpp
 	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST) -c -o $@ $<
 
 ### Link rules... (from --exe)
-/home/nullstarfish/桌面/NullStarfish-s-ysyxRepo/Digital_Design/encoder/build/encoder: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a $(VM_HIER_LIBS)
+/home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/encoder/build/encoder: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a $(VM_HIER_LIBS)
 	$(LINK) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) $(LIBS) $(SC_LIBS) -o $@
 
 

@@ -27,9 +27,9 @@ class Vencoder VL_NOT_FINAL : public VerilatedModel {
     // propagate new values into/out from the Verilated model.
     VL_IN8(&s,0,0);
     VL_IN8(&x,7,0);
-    VL_OUT8(&ys,0,0);
     VL_OUT8(&yex,0,0);
     VL_OUT8(&y,2,0);
+    VL_OUT8(&o_seg0,7,0);
 
     // CELLS
     // Public to allow access to /* verilator public */ items.

@@ -1,13 +1,12 @@
 module encoder(
     input s,
     input wire [7:0] x,
-    output reg ys,
     output reg yex,
-    output reg [2:0] y
+    output reg [2:0] y,
+    output [7:0] o_seg0
 );
     always@(*) begin
         if(s) begin
-            ys = 1;
             yex = 0;
             casez(x)
                 8'b00000000: begin y = 3'b000; yex = 0; end
@@ -23,9 +22,14 @@ module encoder(
             endcase
         end
         else begin
-            ys = 0;
             yex = 0;
             y = 3'b000;
         end
     end
+    wire [7:0] seg0;
+    seg_decoder seg_decoder0 (
+        .num({1'b0, y}),
+        .seg(seg0)
+    );
+    assign o_seg0 = yex ? ~seg0 : 8'b11111111;
 endmodule

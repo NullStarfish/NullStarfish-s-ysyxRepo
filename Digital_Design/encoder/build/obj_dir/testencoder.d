@@ -1,5 +1,5 @@
 testencoder.o: \
- /home/nullstarfish/桌面/NullStarfish-s-ysyxRepo/Digital_Design/encoder/csrc/testencoder.cpp \
+ /home/nullstarfish/Desktop/NullStarfish-s-ysyxRepo/Digital_Design/encoder/csrc/testencoder.cpp \
  Vencoder.h /usr/local/share/verilator/include/verilated.h \
  /usr/local/share/verilator/include/verilatedos.h \
  /usr/local/share/verilator/include/verilated_config.h \
@@ -9,5 +9,5 @@ testencoder.o: \
  /usr/local/share/verilator/include/verilated.h \
  /usr/local/share/verilator/include/verilated_trace.h \
  /usr/local/share/verilator/include/verilated_trace_defs.h \
- /home/nullstarfish/桌面/nvboard/usr/include/nvboard.h \
- /home/nullstarfish/桌面/nvboard/usr/include/pins.h
+ /home/nullstarfish/Desktop/nvboard/usr/include/nvboard.h \
+ /home/nullstarfish/Desktop/nvboard/usr/include/pins.h

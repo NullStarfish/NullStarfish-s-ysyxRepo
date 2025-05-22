@@ -1,5 +1,5 @@
 module alu 
-    #(parameter WIDTH = 8)   
+    #(parameter WIDTH = 4)   
     (
         input [WIDTH - 1 : 0] A,
         input [WIDTH - 1 : 0] B,
