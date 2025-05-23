@@ -32,6 +32,6 @@ Vps2_top__Syms::Vps2_top__Syms(VerilatedContext* contextp, const char* namep, Vp
     // Setup export functions
     for (int __Vfinal = 0; __Vfinal < 2; ++__Vfinal) {
         __Vscope_ps2_top.varInsert(__Vfinal,"data", &(TOP__ps2_top.data), false, VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,1 ,7,0);
-        __Vscope_ps2_top.varInsert(__Vfinal,"valid", &(TOP__ps2_top.valid), false, VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
+        __Vscope_ps2_top.varInsert(__Vfinal,"ready", &(TOP__ps2_top.ready), false, VLVT_UINT8,VLVD_NODIR|VLVF_PUB_RW,0);
     }
 }

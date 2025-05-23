@@ -25,8 +25,8 @@ VL_ATTR_COLD void Vps2_top___024root___eval_triggers__stl(Vps2_top___024root* vl
 #endif
 }
 
-void Vps2_top_ps2_top___ico_sequent__TOP__ps2_top__0(Vps2_top_ps2_top* vlSelf);
-void Vps2_top___024root___ico_sequent__TOP__0(Vps2_top___024root* vlSelf);
+VL_ATTR_COLD void Vps2_top_ps2_top___stl_sequent__TOP__ps2_top__0(Vps2_top_ps2_top* vlSelf);
+void Vps2_top___024root___nba_sequent__TOP__0(Vps2_top___024root* vlSelf);
 
 VL_ATTR_COLD void Vps2_top___024root___eval_stl(Vps2_top___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
@@ -34,7 +34,7 @@ VL_ATTR_COLD void Vps2_top___024root___eval_stl(Vps2_top___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vps2_top___024root___eval_stl\n"); );
     // Body
     if (vlSelf->__VstlTriggered.at(0U)) {
-        Vps2_top_ps2_top___ico_sequent__TOP__ps2_top__0((&vlSymsp->TOP__ps2_top));
-        Vps2_top___024root___ico_sequent__TOP__0(vlSelf);
+        Vps2_top_ps2_top___stl_sequent__TOP__ps2_top__0((&vlSymsp->TOP__ps2_top));
+        Vps2_top___024root___nba_sequent__TOP__0(vlSelf);
     }
 }

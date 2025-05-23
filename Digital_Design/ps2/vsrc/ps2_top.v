@@ -6,40 +6,65 @@ module ps2_top (
     output [7:0] o_seg0,
     output [7:0] o_seg1,
     output [7:0] o_seg2,
-    output [7:0] o_seg3
+    output [7:0] o_seg3,
+    output [7:0] o_seg4,
+    output [7:0] o_seg5
 );
     wire [7:0] num;
     wire [7:0] data /*verilator public*/;
-    wire valid /*verilator public*/;
-
+    wire ready /*verilator public*/;
+    wire nextdata_n;
     ps2_keyboard uut1 (
         .clk(clk),
-        .resetn(~rst),
+        .clrn(~rst),
         .ps2_clk(ps2_clk),
         .ps2_data(ps2_data),
         .data(data),
-        .valid(valid)
+        .nextdata_n(nextdata_n),
+        .ready(ready),
+        .overflow()
     );
 
-    assign num = data;
+    wire key_pressed;
+    wire [7:0] data_to_seg;
+    wire [7:0] press_cnt;
+    ps2_fsm fsm (
+        .clk(clk),
+        .rst_n(~rst),
+        .data(data),
+        .ready(ready),
+        .nextdata_n(nextdata_n),
+        .key_pressed(key_pressed),
+        .data_to_seg(data_to_seg),
+        .press_cnt(press_cnt)
+    );
+
 
     seg_driver seg_uut0 (
-        .num(num),
-        .en(valid),
+        .num(data_to_seg),
+        .en(key_pressed),
         .o_seg0(o_seg0),
         .o_seg1(o_seg1)
     );
 
     wire [7:0] ascii_code;
     ascii_rom ascii_uut (
-        .ps2_code(data),
+        .ps2_code(data_to_seg),
         .ascii_code(ascii_code)
     );
 
     seg_driver seg_uut1 (
         .num(ascii_code),
-        .en(valid),
+        .en(key_pressed),
         .o_seg0(o_seg2),
         .o_seg1(o_seg3)
+    );
+
+
+    seg_driver seg_uut2 (
+        .num(press_cnt),
+        .en(1),
+        .o_seg0(o_seg4),
+        .o_seg1(o_seg5)
     );
 endmodule

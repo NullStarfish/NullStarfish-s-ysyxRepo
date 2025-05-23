@@ -25,6 +25,8 @@ class Vps2_top___024root final : public VerilatedModule {
     VL_OUT8(o_seg1,7,0);
     VL_OUT8(o_seg2,7,0);
     VL_OUT8(o_seg3,7,0);
+    VL_OUT8(o_seg4,7,0);
+    VL_OUT8(o_seg5,7,0);
     CData/*0:0*/ __Vtrigrprev__TOP__clk;
     CData/*0:0*/ __VactContinue;
     IData/*31:0*/ __VstlIterCount;
