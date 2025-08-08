@@ -1,19 +1,4 @@
-----
-RUNNING: tests/ringbuffer_tests
-FAILED: Failed to read data from buffer.
-Tests run: 2
-----
-RUNNING: tests/ringbuffer_tests
-FAILED: Failed to read data from buffer.
-Tests run: 2
-----
-RUNNING: tests/ringbuffer_tests
-FAILED: Failed to read data from buffer.
-Tests run: 2
-----
-RUNNING: tests/ringbuffer_tests
-FAILED: Wrong buffer length.
-Tests run: 1
+ 
 ----
 RUNNING: tests/ringbuffer_tests
 ALL TESTS PASSED
